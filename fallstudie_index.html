@@ -4,22 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dress The World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Raleway', 'ui-sans-serif', 'system-ui'],
+        }
+      }
+    }
+  }
+</script>
+
+
 </head>
-<body>
-  <header class="flex justify-between items-center bg-gray-100 p-4">
+<body class="min-h-screen flex flex-col font-sans text-gray-900">
+<header class="fixed top-0 left-0 right-0 bg-gray-100 z-50 shadow-md bg-gray-100">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 py-4">
     <h1 class="text-xl font-bold">Dress The World</h1>
-    <div>
-      <input type="text" placeholder="Suche..." class="border p-1 rounded">
+
+    <div class="w-full sm:w-auto">
+      <input type="text" placeholder="Suche..." class="border p-2 rounded w-full sm:w-64">
     </div>
+
     <nav>
-      <ul class="flex gap-4">
-        <li><a href="#" class="text-blue-500 hover:underline">Startseite</a></li>
-        <li><a href="#" class="text-blue-500 hover:underline">Über das Projekt</a></li>
-        <li><a href="#" class="text-blue-500 hover:underline">So geht's</a></li>
-        <li><a href="#" class="text-blue-500 hover:underline">Spenden</a></li>
+      <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
+        <li><a href="#start" class="text-blue-500 hover:underline">Startseite</a></li>
+        <li><a href="#ueber-uns" class="text-blue-500 hover:underline">Über das Projekt</a></li>
+        <li><a href="#so-gehts" class="text-blue-500 hover:underline">So geht's</a></li>
+        <li><a href="#spenden" class="text-blue-500 hover:underline">Spenden</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
+  <main class="pt-24 flex-1">
+  <!-- WILLKOMMEN -->
+<section id="start" class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Willkommen</h2>
+    <p>...</p> 
+  </div>
+</section>
+
+<!-- ÜBER UNS -->
+<section id="ueber-uns" class="py-16 bg-gray-100">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Über uns</h2>
+    <p>...</p>  
+  </div>
+</section>
+
+<!-- SO GEHT'S -->
+<section id="so-gehts" class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">So funktioniert's</h2>
+    <p>...</p>  
+  </div>
+</section>
+
+<!-- SPENDEN -->
+<section id="spenden" class="py-16 bg-gray-100">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Spenden</h2>
+    <form id="spendenForm" class="space-y-6 max-w-xl mx-auto text-left">
+  <!-- Auswahl Übergabe oder Abholung -->
+  <div>
+    <label class="block font-semibold mb-1">Spendenart</label>
+    <select id="spendenart" class="border rounded w-full p-2">
+      <option value="">Bitte wählen</option>
+      <option value="uebergabe">Übergabe an der Geschäftsstelle</option>
+      <option value="abholung">Abholung durch Sammelfahrzeug</option>
+    </select>
+  </div>
+
+  <!-- Abholadresse -->
+  <div id="abholadresse" class="hidden">
+    <label class="block font-semibold mb-1">Abholadresse</label>
+    <input type="text" id="adresse" class="border rounded w-full p-2" placeholder="Straße, Hausnummer">
+    <input type="text" id="plz" class="border rounded w-full p-2 mt-2" placeholder="Postleitzahl">
+    <input type="text" id="stadt" class="border rounded w-full p-2 mt-2" placeholder="Stadt">
+  </div>
+
+  <!-- Drop-Down für Art der Kleidung -->
+  <div>
+    <label class="block font-semibold mb-1">Art der Kleidung</label>
+    <select id="kleidung" class="border rounded w-full p-2">
+  <option value="">Bitte wählen</option>
+  <option value="Hosen">Hosen</option>
+  <option value="Jacken">Jacken</option>
+  <option value="Shirts">Shirts</option>
+  <option value="Schuhe">Schuhe</option>
+  <option value="Kinderkleidung">Kinderkleidung</option>
+  <option value="Sonstiges">Sonstiges</option>
+    </select>
+  <!-- Zusatzfeld für freie Eingabe bei Sonstiges -->
+  <input type="text" id="kleidungSonstiges" class="border rounded w-full p-2 mt-2 hidden" placeholder="Bitte geben Sie die Art der Kleidung an">
+  </div>
+
+  <!-- Krisengebiet -->
+  <div>
+    <label class="block font-semibold mb-1">Krisengebiet</label>
+    <select id="krisengebiet" class="border rounded w-full p-2">
+      <option value="">Bitte wählen</option>
+      <option value="Ukraine">Ukraine</option>
+      <option value="Gaza">Gaza</option>
+      <option value="Sudan">Sudan</option>
+    </select>
+  </div>
+
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Spende registrieren</button>
+</form>
+
+<!-- Bestätigungsanzeige -->
+<div id="bestaetigung" class="hidden mt-8 bg-green-100 border border-green-400 p-4 rounded text-left"></div>
+
+  </div>
+</section>
+
+<!-- SAG’S WEITER -->
+<section id="weiterempfehlen" class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4">Sag's weiter</h2>
+    <p>...</p>
+  </div>
+</section>
+  </main>
+<footer class="bg-gray-100 py-8">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-600 text-center sm:text-left">
+
+      <!-- Linke Spalte -->
+      <div class="flex space-x-4">
+        <a href="#" class="hover:underline">Impressum</a>
+        <a href="#" class="hover:underline">Datenschutz</a>
+      </div>
+
+      <!-- Mittlere Spalte -->
+      <div class="flex space-x-4">
+        <a href="#" class="hover:underline">FAQ</a>
+        <a href="#" class="hover:underline">Kontakt</a>
+      </div>
+
+      <!-- Rechte Spalte: Social Icons -->
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-blue-600" aria-label="Facebook">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+        </a>
+        <a href="#" class="hover:text-pink-500" aria-label="Instagram">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm10 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+        </a>
+        <a href="#" class="hover:text-gray-800" aria-label="X (Twitter)">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M21 2.5L13.4 11l7.6 10.5h-2.8l-6.5-9.1-6.5 9.1H2l7.6-10.5L3 2.5h2.8l6.2 8.8 6.2-8.8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const kleidungDropdown = document.getElementById("kleidung");
+  const kleidungSonstiges = document.getElementById("kleidungSonstiges");
+
+  kleidungDropdown.addEventListener("change", function () {
+   if (this.value === "Sonstiges") {
+    kleidungSonstiges.classList.remove("hidden");
+   } else {
+    kleidungSonstiges.classList.add("hidden");
+  }
+});
+  const spendenart = document.getElementById("spendenart");
+  const abholadresse = document.getElementById("abholadresse");
+  const form = document.getElementById("spendenForm");
+  const bestaetigung = document.getElementById("bestaetigung");
+
+  spendenart.addEventListener("change", function () {
+    if (this.value === "abholung") {
+      abholadresse.classList.remove("hidden");
+    } else {
+      abholadresse.classList.add("hidden");
+    }
+  });
+
+  form.addEventListener("submit", function (e) {
+    const kleidung = kleidungDropdown.value === "Sonstiges" 
+      ? kleidungSonstiges.value 
+      : kleidungDropdown.value;
+    e.preventDefault();
+    const art = spendenart.value;
+    const krise = document.getElementById("krisengebiet").value;
+    const plz = document.getElementById("plz").value;
+    let valid = true;
+    let meldung = "";
+    
+    // nachfolgend: Validierungen   
+    if (art === "abholung") {
+      if (!plz || !plz.startsWith("12")) {
+        alert("Bitte gib eine gültige Postleitzahl an, die mit '12' beginnt.");
+      return;
+    } //prüft PLZ
+      meldung += `<p><strong>Abholung</strong> an: ${document.getElementById("adresse").value}, ${plz} ${document.getElementById("stadt").value}</p>`;
+    } else if (art === "uebergabe") {
+      meldung += `<p><strong>Übergabe</strong> an der Geschäftsstelle</p>`;
+    } else {
+      alert("Bitte wähle eine Spendenart.");
+      return;
+    } //erzwingt Auswahl bei Spendenart
+    if (!kleidung) {
+  alert("Bitte gib die Art der Kleidung an.");
+  return;
+   } //erzwingt Auswahl der Kleidungsart, im Drop-Down und im Eingabefeld
+   if (kleidungDropdown.value === "Sonstiges") {
+  const eingabe = kleidungSonstiges.value.trim();
+  if (eingabe.length < 3) {
+    alert("Bitte gib bei 'Sonstiges' eine Kleiderart mit mindestens 3 Zeichen an.");
+    return;
+  }
+  } //erzwingt Zeichenlänge von min. 3 bei freier Eingabe der Kleidung.
+    if (!krise) {
+  alert("Bitte wähle ein Krisengebiet.");
+  return;
+   } //erzwingt Auswahl eines Krisengebiets
+
+   //nachfolgend: Bestätigungsmeldung
+    meldung += `<p><strong>Kleidung:</strong> ${kleidung}</p>`;
+    meldung += `<p><strong>Krisengebiet:</strong> ${krise}</p>`;
+    meldung += `<p><strong>Datum:</strong> ${new Date().toLocaleDateString()}</p>`;
+    meldung += `<p><strong>Uhrzeit:</strong> ${new Date().toLocaleTimeString()}</p>`;
+
+    form.classList.add("hidden");
+    bestaetigung.innerHTML = `<h3 class="font-bold mb-2">Vielen Dank für deine Spende!</h3>${meldung}`;
+    bestaetigung.classList.remove("hidden");
+  });
+});
+</script>
+
 </body>
 </html>
