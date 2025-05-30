@@ -12,7 +12,7 @@
     theme: {
       extend: {
         fontFamily: {
-          sans: ['Raleway', 'ui-sans-serif', 'system-ui'],
+          sans: ['Raleway', 'ui-sans-serif', 'system-ui', 'sans-serif'], //Fallbacks falls Raleway nicht geladen wird
         }
       }
     }
@@ -23,36 +23,37 @@
 </head>
 <body class="min-h-screen flex flex-col font-sans text-gray-900">
 <header class="fixed top-0 left-0 right-0 z-50 shadow-md bg-amber-100">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 py-4">
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 py-4">
 
     <!-- Logo + Titel -->
     <div class="flex items-center space-x-3 text-amber-600">
       <div class="relative w-8 h-6">
-        <svg class="absolute left-0 top-0 w-6 h-6 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <!-- SVG 2 -->
-    <svg class=" text-amber-900 absolute left-1.5 top-1 w-6 h-6 opacity-70" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.5">
-      <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <!-- SVG 3 -->
-    <svg class="absolute left-3 top-2 w-6 h-6 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-      </div>
+         <!-- SVG 2 -->
+          <svg class="absolute left-0 top-0 w-6 h-6 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- SVG 2 -->
+          <svg class=" text-amber-900 absolute left-1.5 top-1 w-6 h-6 opacity-70" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1.5">
+            <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <!-- SVG 3 -->
+          <svg class="absolute left-3 top-2 w-6 h-6 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+     </div>
       <span class="text-xl font-bold tracking-wide">Dress The World</span>
     </div>
 
     <!-- Suche -->
-    <div class="w-full sm:w-auto">
-      <input type="text" placeholder="Suche..." class="border p-2 rounded w-full sm:w-64">
+    <div class="w-72 sm:w-64 lg:w-96">
+      <input type="search" placeholder="Suche..." class="border p-2 rounded w-72 sm:w-64 lg:w-96 focus:outline-none focus:ring-2 focus:ring-amber-400">
     </div>
 
     <!-- Rechte Seite: Menü-Button (mobil) + Spenden-Button -->
-    <div class="flex items-center gap-2 sm:gap-4">
+    <div class="flex items-center gap-2 md:gap-4">
 
       <!-- Menü-Toggle (nur Mobil) -->
-      <button id="menuToggle" class="sm:hidden text-amber-900 font-semibold px-3 py-2 rounded hover:bg-amber-200 transition">
+      <button id="menuToggle" class="md:hidden text-amber-900 font-semibold px-3 py-2 rounded hover:bg-amber-200 transition">
         ☰ Menü
       </button>
 
@@ -62,155 +63,154 @@
       </a>
     
 
-  <!-- Navigationsmenü (Dropdown auf Mobil, horizontal auf sm+) -->
-    <nav id="navMenu" class="hidden sm:flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm px-4 sm:px-6 lg:px-8 pb-4 sm:pb-0">
-      <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
-        <li><a href="#start" class="text-amber-900 hover:underline">Startseite</a></li>
-        <li><a href="#ueber-uns" class="text-amber-900 hover:underline">Über das Projekt</a></li>
-        <li><a href="#so-gehts" class="text-amber-900 hover:underline">So geht's</a></li>
-      </ul>
-    </nav>
-   </div>
+     <!-- Navigationsmenü (Dropdown auf Mobil, horizontal auf sm+) -->
+      <nav id="navMenu" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-4 text-md px-4 md:px-6 lg:px-8 pb-4 md:pb-0">
+        <ul class="flex flex-col md:flex-row gap-2 md:gap-4 text-md">
+          <li><a href="#start" class="text-amber-900 hover:underline">Startseite</a></li>
+          <li><a href="#ueber-uns" class="text-amber-900 hover:underline">Über das Projekt</a></li>
+          <li><a href="#so-gehts" class="text-amber-900 hover:underline">So geht's</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
-  <main flex-1 pt-24>
-    <!--Section zum Styling-Ausgleich des Paddings in der Willkommen-Section auf größeren Bildschirmen-->
-<section id="hintergrund" class="hidden sm:block py-6 bg-gradient-to-r from-gray-100 via-white to-gray-100"></section>
+<main flex-1 pt-24>
+      <!--Section zum Styling-Ausgleich des Paddings in der Willkommen-Section auf größeren Bildschirmen-->
+  <section id="hintergrund" class="hidden sm:block py-6 bg-gradient-to-r from-gray-100 via-white to-gray-100"></section>
   <!-- WILLKOMMEN -->
-<section id="start" class= "pt-48 sm:pt-32 flex-1 py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
+  <section id="start" class= "pt-48 sm:pt-32 flex-1 py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
       
-      <!-- TEXTBEREICH -->
-      <div class="text-center lg:text-left max-w-2xl mx-auto text-gray-800">
-        <h2 class="text-4xl font-extrabold text-amber-600 mb-6">Willkommen</h2>
-        <p class="mb-4">
-          Nur 
-          <a href="https://www.greenpeace.de/publikationen/20151123_greenpeace_modekonsum_flyer.pdf" 
-             target="_blank" 
-             class="text-amber-600 font-semibold hover:underline">
-            21 % der Deutschen
-          </a> 
-          sortieren Kleidung erst dann aus, wenn sie wirklich „nicht mehr tragbar“ ist. Du gehörst nicht zu diesen 21 %? Dann bist du hier genau richtig!
-        </p>
-        <p class="mb-4">
-          Altkleidercontainer fühlen sich für dich nur an wie ein Mülleimer mit besserem Gewissen? Dann wirst du unser Konzept lieben.
-        </p>
-      </div>
+        <!-- TEXTBEREICH -->
+        <div class="text-center lg:text-left max-w-2xl mx-auto text-gray-800">
+          <h2 class="text-4xl font-extrabold text-amber-600 mb-6">Willkommen</h2>
+          <p class="mb-4">
+            Nur 
+            <a href="https://www.greenpeace.de/publikationen/20151123_greenpeace_modekonsum_flyer.pdf" 
+              target="_blank" 
+              class="text-amber-600 font-semibold hover:underline">
+              21 % der Deutschen
+            </a> 
+            sortieren Kleidung erst dann aus, wenn sie wirklich „nicht mehr tragbar“ ist. Du gehörst nicht zu diesen 21 %? Dann bist du hier genau richtig!
+          </p>
+          <p class="mb-4">
+            Altkleidercontainer fühlen sich für dich nur an wie ein Mülleimer mit besserem Gewissen? Dann wirst du unser Konzept lieben.
+          </p>
+        </div>
 
-      <!-- BILDBEREICH -->
-      <div class="lg:w-1/2">
-        <img src="Kleiderhaufen_breit.jpg" 
-             alt="Kleidung sortieren" 
-             class="rounded-xl shadow-xl w-full max-w-md lg:max-w-lg mx-auto lg:mx-0 transform lg:translate-x-10">
+        <!-- BILDBEREICH -->
+        <div class="lg:w-1/2">
+          <img src="Kleiderhaufen_breit.jpg" 
+              alt="Kleidung sortieren" 
+              class="rounded-xl shadow-xl w-full max-w-md lg:max-w-lg mx-auto lg:mx-0 transform lg:translate-x-10">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ÜBER UNS -->
-<section id="ueber-uns" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Über uns</h2>
-    <p>...</p>  
-  </div>
-</section>
+  <!-- ÜBER UNS -->
+  <section id="ueber-uns" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Über uns</h2>
+      <p>...</p>  
+    </div>
+  </section>
 
-<!-- SO GEHT'S -->
-<section id="so-gehts" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">So funktioniert's</h2>
-    <p>...</p>  
-  </div>
-</section>
+  <!-- SO GEHT'S -->
+  <section id="so-gehts" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">So funktioniert's</h2>
+      <p>...</p>  
+    </div>
+  </section>
 
-<!-- SPENDEN -->
-<section id="spenden" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Spenden</h2>
-    <p class="mb-6">Hilf uns, Kleidung dorthin zu bringen, wo sie am dringendsten gebraucht wird.</p>
-    <!--Button zum Formular - keine Anzeige des Formulars während des Scrollens!-->
-    <button id="zeigeFormularBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300">Jetzt spenden</button>
-    <form id="spendenForm" class="space-y-6 max-w-xl mx-auto text-left mt-10 hidden">
-  <!-- Auswahl Übergabe oder Abholung -->
-  <div>
-    <label class="block font-semibold mb-1">Spendenart</label>
-    <select id="spendenart" class="border rounded w-full p-2">
-      <option value="">Bitte wählen</option>
-      <option value="uebergabe">Übergabe an der Geschäftsstelle</option>
-      <option value="abholung">Abholung durch Sammelfahrzeug</option>
-    </select>
-<p id="fehler-spendenart" class="text-red-500 text-sm mt-1 hidden">Bitte wähle eine Spendenart.</p> <!--Hinweistext bei fehlender Auswahl-->
-  </div>
+  <!-- SPENDEN -->
+  <section id="spenden" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Spenden</h2>
+      <p class="mb-6">Hilf uns, Kleidung dorthin zu bringen, wo sie am dringendsten gebraucht wird.</p>
+      <!--Button zum Formular - keine Anzeige des Formulars während des Scrollens!-->
+      <button id="zeigeFormularBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300">Jetzt spenden</button>
+      <form id="spendenForm" class="space-y-6 max-w-xl mx-auto text-left mt-10 hidden">
+      <!-- Auswahl Übergabe oder Abholung -->
+        <div>
+          <label class="block font-semibold mb-1">Spendenart</label>
+          <select id="spendenart" class="border rounded w-full p-2">
+            <option value="">Bitte wählen</option>
+            <option value="uebergabe">Übergabe an der Geschäftsstelle</option>
+            <option value="abholung">Abholung durch Sammelfahrzeug</option>
+          </select>
+          <p id="fehler-spendenart" class="text-red-500 text-sm mt-1 hidden">Bitte wähle eine Spendenart.</p> <!--Hinweistext bei fehlender Auswahl-->
+        </div>
 
-  <!-- Abholadresse -->
-  <div id="abholadresse" class="hidden">
-    <label class="block font-semibold mb-1">Abholadresse</label>
-    <input type="text" id="adresse" class="border rounded w-full p-2" placeholder="Straße, Hausnummer">
-    <input type="text" id="plz" class="border rounded w-full p-2 mt-2" placeholder="Postleitzahl">
-    <input type="text" id="stadt" class="border rounded w-full p-2 mt-2" placeholder="Stadt">
-    <!--Hinweistexte im Bereich Adresse-->
-    <p id="fehler-strasse" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Straße und Hausnummer an.</p> 
-    <p id="fehler-plz" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Postleitzahl an.</p>
-    <p id="fehler-abholadresse-fehlt" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Stadt an.</p>
-    <p id="fehler-plz-bereich" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine gültige Postleitzahl an, die mit '12' beginnt.</p> 
-  </div>
+        <!-- Abholadresse -->
+        <div id="abholadresse" class="hidden">
+          <label class="block font-semibold mb-1">Abholadresse</label>
+          <input type="text" id="adresse" class="border rounded w-full p-2" placeholder="Straße, Hausnummer">
+          <input type="text" id="plz" class="border rounded w-full p-2 mt-2" placeholder="Postleitzahl">
+          <input type="text" id="stadt" class="border rounded w-full p-2 mt-2" placeholder="Stadt">
+          <!--Hinweistexte im Bereich Adresse-->
+          <p id="fehler-strasse" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Straße und Hausnummer an.</p> 
+          <p id="fehler-plz" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Postleitzahl an.</p>
+          <p id="fehler-abholadresse-fehlt" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Stadt an.</p>
+          <p id="fehler-plz-bereich" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine gültige Postleitzahl an, die mit '12' beginnt.</p> 
+        </div>
 
-  <!-- Drop-Down für Art der Kleidung -->
-  <div>
-    <label class="block font-semibold mb-1">Art der Kleidung</label>
-    <select id="kleidung" class="border rounded w-full p-2">
-      <option value="">Bitte wählen</option>
-      <option value="Hosen">Hosen</option>
-      <option value="Jacken">Jacken</option>
-      <option value="Shirts">Shirts</option>
-      <option value="Schuhe">Schuhe</option>
-      <option value="Kinderkleidung">Kinderkleidung</option>
-      <option value="Sonstiges">Sonstiges</option>
-    </select>
-  <!-- Zusatzfeld für freie Eingabe bei Sonstiges -->
-  <input type="text" id="kleidungSonstiges" class="border rounded w-full p-2 mt-2 hidden" placeholder="Bitte geben Sie die Art der Kleidung an">
-  <!--Hinweistext bei fehlender Eingabe (doppelt verwendbar)-->  
-  <p id="fehler-kleidung" class="text-red-500 text-sm mt-1 hidden">Bitte gib die Art der Kleidung an.</p>
-  <!--Hinweistext bei zu kurzem String bei freier Eingabe-->
-  <p id="fehler-kleidung-sonstiges" class="text-red-500 text-sm mt-1 hidden">Ein Kleidungsstück muss mindestens 3 Zeichen lang sein.</p>
-</div>
+        <!-- Drop-Down für Art der Kleidung -->
+        <div>
+          <label class="block font-semibold mb-1">Art der Kleidung</label>
+          <select id="kleidung" class="border rounded w-full p-2">
+            <option value="">Bitte wählen</option>
+            <option value="Hosen">Hosen</option>
+            <option value="Jacken">Jacken</option>
+            <option value="Shirts">Shirts</option>
+            <option value="Schuhe">Schuhe</option>
+            <option value="Kinderkleidung">Kinderkleidung</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+          <!-- Zusatzfeld für freie Eingabe bei Sonstiges -->
+          <input type="text" id="kleidungSonstiges" class="border rounded w-full p-2 mt-2 hidden" placeholder="Bitte geben Sie die Art der Kleidung an">
+          <!--Hinweistext bei fehlender Eingabe (doppelt verwendbar)-->  
+          <p id="fehler-kleidung" class="text-red-500 text-sm mt-1 hidden">Bitte gib die Art der Kleidung an.</p>
+          <!--Hinweistext bei zu kurzem String bei freier Eingabe-->
+          <p id="fehler-kleidung-sonstiges" class="text-red-500 text-sm mt-1 hidden">Ein Kleidungsstück muss mindestens 3 Zeichen lang sein.</p>
+        </div>
 
-  <!-- Krisengebiet -->
-  <div>
-    <label class="block font-semibold mb-1">Krisengebiet</label>
-    <select id="krisengebiet" class="border rounded w-full p-2">
-      <option value="">Bitte wählen</option>
-      <option value="Ukraine">Ukraine</option>
-      <option value="Gaza">Gaza</option>
-      <option value="Sudan">Sudan</option>
-    </select>
-  <!--Hinweistext bei fehlender Auswahl-->
-  <p id="fehler-krisengebiet" class="text-red-500 text-sm mt-1 hidden">Bitte wähle ein Krisengebiet.</p>
-  </div>
+        <!-- Krisengebiet -->
+        <div>
+          <label class="block font-semibold mb-1">Krisengebiet</label>
+          <select id="krisengebiet" class="border rounded w-full p-2">
+            <option value="">Bitte wählen</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="Gaza">Gaza</option>
+            <option value="Sudan">Sudan</option>
+          </select>
+          <!--Hinweistext bei fehlender Auswahl-->
+          <p id="fehler-krisengebiet" class="text-red-500 text-sm mt-1 hidden">Bitte wähle ein Krisengebiet.</p>
+        </div>
 
-  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Spende registrieren</button>
-</form>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Spende registrieren</button>
+        </form>
 
-<!-- Bestätigungsanzeige -->
-<div id="bestaetigung" class="hidden mt-8 bg-green-100 border border-green-400 p-4 rounded text-left"></div>
+       <!-- Bestätigungsanzeige -->
+        <div id="bestaetigung" class="hidden mt-8 bg-green-100 border border-green-400 p-4 rounded text-left"></div>
+    </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- SAG’S WEITER -->
-<section id="weiterempfehlen" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Sag's weiter</h2>
-    <p>...</p>
-  </div>
-</section>
-  </main>
+  <!-- SAG’S WEITER -->
+  <section id="weiterempfehlen" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-4">Sag's weiter</h2>
+      <p>...</p>
+    </div>
+  </section>
+</main>
 
 <!--FOOTER-->
 <footer class="bg-amber-100 py-8">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col sm:flex-row justify-between items-center gap-6 text-sm text-gray-600 text-center sm:text-left">
 
       <!-- Linke Spalte -->
@@ -240,11 +240,10 @@
     </div>
   </div>
 </footer>
-
+</div>
 <!--JS-->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-
+ // === auf DOMContentLoad verzichtet wegen Positionierung am Ende des Body ===
   // === ELEMENTE SAMMELN ===
   const zeigeFormularBtn = document.getElementById("zeigeFormularBtn");
   const spendenForm = document.getElementById("spendenForm");
@@ -260,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
  // === 0. MOBILMENÜ: EIN-/AUSBLENDEN ===
  menuToggle.addEventListener("click", () => {
   navMenu.classList.toggle("hidden");
-});
+  });
 
   // === 1. BUTTON-KLICK: Formular anzeigen ===
   zeigeFormularBtn.addEventListener("click", function () {
@@ -269,12 +268,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // === 1a. HEADER-SPENDENLINK: Direkt zum Formular scrollen & anzeigen ===
-headerSpendenLink.addEventListener("click", function (e) {
+ headerSpendenLink.addEventListener("click", function (e) {
   e.preventDefault();
   zeigeFormularBtn.classList.add("hidden");
   spendenForm.classList.remove("hidden");
   spendenForm.scrollIntoView({ behavior: "smooth" });
-});
+ });
 
   // === 2. DROPDOWN „Kleidung“: Freifeld für „Sonstiges“ anzeigen ===
   kleidungDropdown.addEventListener("change", function () {
@@ -379,7 +378,6 @@ headerSpendenLink.addEventListener("click", function (e) {
     bestaetigung.classList.remove("hidden");
   });
 
-});
 </script>
 </body>
 </html>
