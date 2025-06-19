@@ -21,14 +21,14 @@
 
 
 </head>
-<body class="min-h-screen flex flex-col font-sans text-gray-900">
-<header class="fixed top-0 left-0 right-0 z-50 shadow-md bg-amber-100">
-  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 py-4">
+<body class="min-h-screen flex flex-col font-sans text-gray-900 text-md sm:text-lg">
+<header class="fixed top-0 left-0 right-0 z-50 bg-amber-100 shadow-md">
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center py-4">
 
-    <!-- Logo + Titel -->
-    <div class="flex items-center space-x-3 text-amber-600">
-      <div class="relative w-8 h-6">
-         <!-- SVG 2 -->
+  <!-- Logo + Titel -->
+  <div class="flex items-center space-x-3 text-amber-600 py-2 px-2 sm:px-4 order-1 md:order-none">
+     <div class="relative w-8 h-6">
+         <!-- SVG 1 -->
           <svg class="absolute left-0 top-0 w-6 h-6 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M12 3c-1.5 0-2.5 1-2.5 2.25S10.5 7.5 12 7.5s2.5-1 2.5-2.25S13.5 3 12 3zM12 7.5V10L4 20h16l-8-10V7.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -45,46 +45,35 @@
     </div>
 
     <!-- Suche -->
-    <div class="w-72 sm:w-64 lg:w-96">
-      <input type="search" placeholder="Suche..." class="border p-2 rounded w-72 sm:w-64 lg:w-96 focus:outline-none focus:ring-2 focus:ring-amber-400">
+    <div class="w-72 sm:w-64 lg:w-96 py-2 px-2 sm:px-4 order-3 md:order-none">
+     <input type="search" placeholder="Suche..." class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-amber-400">
     </div>
 
-    <!-- Rechte Seite: Menü-Button (mobil) + Spenden-Button -->
-    <div class="flex items-center gap-2 md:gap-4">
-
-      <!-- Menü-Toggle (nur Mobil) -->
-      <button id="menuToggle" class="md:hidden text-amber-900 font-semibold px-3 py-2 rounded hover:bg-amber-200 transition">
-        ☰ Menü
-      </button>
-
-      <!-- Spendenbutton bleibt immer sichtbar -->
-      <a href="#" id="headerSpendenLink" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-semibold shadow transition">
+    <!--Spenden-Button-->
+    <div id="spendenHeader" class="order-2 md:order-none py-2 px-2 sm:px-4 flex justify-center sm:justify-end">
+      <a href="#spenden" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full font-semibold shadow transition">
         Spenden
       </a>
-    
-
-     <!-- Navigationsmenü (Dropdown auf Mobil, horizontal auf sm+) -->
-      <nav id="navMenu" class="hidden md:flex flex-col md:flex-row gap-2 md:gap-4 text-md px-4 md:px-6 lg:px-8 pb-4 md:pb-0">
-        <ul class="flex flex-col md:flex-row gap-2 md:gap-4 text-md">
-          <li><a href="#start" class="text-amber-900 hover:underline">Startseite</a></li>
-          <li><a href="#ueber-uns" class="text-amber-900 hover:underline">Über das Projekt</a></li>
-          <li><a href="#so-gehts" class="text-amber-900 hover:underline">So geht's</a></li>
-        </ul>
-      </nav>
     </div>
+
+    <!-- Menü -->
+    <nav class="flex gap-4 md:gap-6 order-4 md:order-none my-2 md:my-0">
+      <a class="text-amber-600 hover:text-amber-900" href="#start">Start</a>
+      <a class="text-amber-600 hover:text-amber-900" href="#ueber-uns">About</a>
+      <a class="text-amber-600 hover:text-amber-900" href="#so-gehts">Ablauf</a>
+    </nav>
+
   </div>
 </header>
 
-<main flex-1 pt-24>
-      <!--Section zum Styling-Ausgleich des Paddings in der Willkommen-Section auf größeren Bildschirmen-->
-  <section id="hintergrund" class="hidden sm:block py-6 bg-gradient-to-r from-gray-100 via-white to-gray-100"></section>
+<main class="flex-1 pt-16 md:pt-24">
   <!-- WILLKOMMEN -->
-  <section id="start" class= "pt-48 sm:pt-32 flex-1 py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
+  <section id="start" class= "pt-48 sm:pt-32 lg:pt-24 flex-1 py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-8">
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-8 mx-6">
       
         <!-- TEXTBEREICH -->
-        <div class="text-center lg:text-left max-w-2xl mx-auto text-gray-800">
+        <div class="text-center lg:text-left max-w-2xl">
           <h2 class="text-4xl font-extrabold text-amber-600 mb-6">Willkommen</h2>
           <p class="mb-4">
             Nur 
@@ -93,10 +82,10 @@
               class="text-amber-600 font-semibold hover:underline">
               21 % der Deutschen
             </a> 
-            sortieren Kleidung erst dann aus, wenn sie wirklich „nicht mehr tragbar“ ist. Du gehörst nicht zu diesen 21 %? Dann bist du hier genau richtig!
+            sortieren Kleidung erst dann aus, wenn sie wirklich „nicht mehr tragbar“ ist. Du gehörst nicht zu diesen 21 %?
           </p>
           <p class="mb-4">
-            Altkleidercontainer fühlen sich für dich nur an wie ein Mülleimer mit besserem Gewissen? Dann wirst du unser Konzept lieben.
+            Altkleidercontainer fühlen sich für dich aber an wie Mülleimer mit besserem Gewissen? Dann wirst du unser Konzept lieben.
           </p>
         </div>
 
@@ -104,7 +93,7 @@
         <div class="lg:w-1/2">
           <img src="Kleiderhaufen_breit.jpg" 
               alt="Kleidung sortieren" 
-              class="rounded-xl shadow-xl w-full max-w-md lg:max-w-lg mx-auto lg:mx-0 transform lg:translate-x-10">
+              class="rounded-xl shadow-xl w-full max-w-md lg:max-w-lg transform lg:translate-x-10">
         </div>
       </div>
     </div>
@@ -113,26 +102,31 @@
   <!-- ÜBER UNS -->
   <section id="ueber-uns" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Über uns</h2>
-      <p>...</p>  
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">Über uns</h2>
+      <p class="text-pretty mb-4">Dress The World e.V. widmet sich ganz der Kleiderspenden-Logistik. </p>
+      <p class="text-pretty mb-4">2015 begann alles mit einem einzigen Container, doch inzwischen gehen in unserer Münchner Zentrale täglich mehrere hundert Kilo Kleidung ein und aus, die wir so gezielt und nachhaltig handhaben wie möglich.</p>  
     </div>
   </section>
 
   <!-- SO GEHT'S -->
   <section id="so-gehts" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">So funktioniert's</h2>
-      <p>...</p>  
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">So funktioniert's</h2>
+      <p class="text-pretty mb-4">Seit Oktober 2024 bieten wir Euch, unseren großzügigen Spenderinnen und Spendern, eine neue Möglichkeit, Kleidung bequem und zielgerichtet zu spenden.</p>
+      <p class="text-pretty mb-4">Zusätzlich zur Registrierung der Art der Kleidungsstücke könnt Ihr nun auch das <span class="font-bold text-amber-600">Krisengebiet aussuchen</span>, in die Eure Spende gehen soll.</p>  
+      <p class="text-pretty mb-4">Außerdem steht Euch nun im <span class="font-bold text-amber-600">Großraum München eine Abholoption</span> zur Verfügung.</p>
+      <p class="text-pretty mb-4">Auch die Übergabe funktioniert inzwischen kontaktlos und run um die Uhr! Dafür steht Euch an unserer Kleiderbox ein Tablet zur Verfügung. <span class="font-bold text-amber-600">Wichtig:</span> Auch für diese Option ist eine Vorab-Regeistrierung online notwendig!</p>
+      <p class="text-pretty mb-4">Zu unseren <span class="font-bold text-amber-600">Öffnungszeiten werktags von 09:00 - 15:00 Uhr</span> ist weiterhin eine persönliche Übergabe ohne Vorab-Registrierung möglich. Wir bitten Euch jedoch, die Registrierung trotzdem vorzunehmen, da sie uns viel Arbeit erspart.</p>
     </div>
   </section>
 
   <!-- SPENDEN -->
   <section id="spenden" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Spenden</h2>
-      <p class="mb-6">Hilf uns, Kleidung dorthin zu bringen, wo sie am dringendsten gebraucht wird.</p>
+      <h2 class="text-3xl font-bold mb-4 text-gray-900">Spenden</h2>
+      <p class="mb-6 text-pretty">Hilf uns, Kleidung dorthin zu bringen, wo sie am dringendsten gebraucht wird.</p>
       <!--Button zum Formular - keine Anzeige des Formulars während des Scrollens!-->
-      <button id="zeigeFormularBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300">Jetzt spenden</button>
+      <button id="zeigeFormularBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300 mb-4">Jetzt spenden</button>
       <form id="spendenForm" class="space-y-6 max-w-xl mx-auto text-left mt-10 hidden">
       <!-- Auswahl Übergabe oder Abholung -->
         <div>
@@ -155,7 +149,8 @@
           <p id="fehler-strasse" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Straße und Hausnummer an.</p> 
           <p id="fehler-plz" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Postleitzahl an.</p>
           <p id="fehler-abholadresse-fehlt" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine Stadt an.</p>
-          <p id="fehler-plz-bereich" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine gültige Postleitzahl an, die mit '12' beginnt.</p> 
+          <p id="fehler-plz-bereich" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine gültige Postleitzahl an, die mit '80' beginnt.</p>
+          <p id="fehler-plz-gueltigkeit" class="text-red-500 text-sm mt-1 hidden">Bitte gib eine gültige fünfstellige Postleitzahl an.</p> 
         </div>
 
         <!-- Drop-Down für Art der Kleidung -->
@@ -203,7 +198,22 @@
   <section id="weiterempfehlen" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl font-bold mb-4">Sag's weiter</h2>
-      <p>...</p>
+      <p class="text-pretty mb-4">Teile unser Konzept mit Freunden und Familie!</p>
+      <div class="flex justify-center space-x-10 sm:space-x-20 mt-6">
+        <!-- Social Media Icons von Heroicons, Styleelemente entfernt und durch eigene Klasse ersetzt-->
+        <a href="#" class="text-amber-600 hover:text-amber-900" aria-label="Facebook">
+          <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
+        </a>
+        <a href="#" class="text-amber-600 hover:text-amber-900" aria-label="Instagram">
+          <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5c0 3.3-2.45 5.75-5.75 5.75h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zm10 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+        </a>
+        <a href="#" class="text-amber-600 hover:text-amber-900" aria-label="X (Twitter)">
+          <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M21 2.5L13.4 11l7.6 10.5h-2.8l-6.5-9.1-6.5 9.1H2l7.6-10.5L3 2.5h2.8l6.2 8.8 6.2-8.8z"/></svg>
+        </a>
+        <a href="#" class="text-amber-600 hover:text-amber-900" aria-label="Link kopieren">
+          <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
+        </a>
+      </div>
     </div>
   </section>
 </main>
@@ -225,7 +235,7 @@
         <a href="#" class="hover:underline">Kontakt</a>
       </div>
 
-      <!-- Rechte Spalte: Social Icons -->
+      <!-- Rechte Spalte: Social Icons von Heroicons, Styleelemente entfernt und durch eigene Klasse ersetzt-->
       <div class="flex space-x-4">
         <a href="#" class="hover:text-blue-600" aria-label="Facebook">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>
@@ -240,143 +250,169 @@
     </div>
   </div>
 </footer>
-</div>
 <!--JS-->
 <script>
  // === auf DOMContentLoad verzichtet wegen Positionierung am Ende des Body ===
   // === ELEMENTE SAMMELN ===
-  const zeigeFormularBtn = document.getElementById("zeigeFormularBtn");
-  const spendenForm = document.getElementById("spendenForm");
-  const kleidungDropdown = document.getElementById("kleidung");
-  const kleidungSonstiges = document.getElementById("kleidungSonstiges");
-  const spendenart = document.getElementById("spendenart");
-  const abholadresse = document.getElementById("abholadresse");
+  // === Elemente für Bestätugungsanzeige ===
+  const spendenForm = document.getElementById("spendenForm");            // Das Formular
+  const spendenart = document.getElementById("spendenart");              // Auswahl Übergabe / Abholung
+  const adresse = document.getElementById("adresse");                    // Straße und Hausnummer
+  const plz = document.getElementById("plz");                            // Postleitzahl
+  const stadt = document.getElementById("stadt");                        // Stadt
+  const kleidung = document.getElementById("kleidung");                  // Auswahl Kleidungsart
+  const kleidungSonstiges = document.getElementById("kleidungSonstiges"); // Freifeld bei "Sonstiges"
+  const krisengebiet = document.getElementById("krisengebiet");           // Krisengebiet
+  // === Elemente für Fehlermeldungen ===
+  const fehlerSpendenart = document.getElementById("fehler-spendenart");
+  const fehlerStrasse = document.getElementById("fehler-strasse");
+  const fehlerPlz = document.getElementById("fehler-plz");
+  const fehlerStadt = document.getElementById("fehler-abholadresse-fehlt");
+  const fehlerPlzBereich = document.getElementById("fehler-plz-bereich");
+  const fehlerPlzGueltigkeit = document.getElementById("fehler-plz-gueltigkeit");
+  const fehlerKleidung = document.getElementById("fehler-kleidung");
+  const fehlerKleidungSonstiges = document.getElementById("fehler-kleidung-sonstiges");
+  const fehlerKrisengebiet = document.getElementById("fehler-krisengebiet");
+  // === Elemente für Bestätigungsanzeige ===
   const bestaetigung = document.getElementById("bestaetigung");
-  const headerSpendenLink = document.getElementById("headerSpendenLink");
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
+  // === Button zum Anzeigen des Formulars ===
+  const zeigeFormularBtn = document.getElementById("zeigeFormularBtn");
+  const headerSpendenLink = document.getElementById("spendenHeader");
+  
+  // === EVENTLISTENER ===
+  // === Präzisierung der "Sonstiges"-Eingabe ===
+  kleidung.addEventListener("change", () => {
+  if (kleidung.value === "Sonstiges") {
+    kleidungSonstiges.classList.remove("hidden");
+  } else {
+    kleidungSonstiges.classList.add("hidden");
+  }
+});
 
- // === 0. MOBILMENÜ: EIN-/AUSBLENDEN ===
- menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("hidden");
-  });
-
-  // === 1. BUTTON-KLICK: Formular anzeigen ===
-  zeigeFormularBtn.addEventListener("click", function () {
-    zeigeFormularBtn.classList.add("hidden");
-    spendenForm.classList.remove("hidden");
-  });
-
-  // === 1a. HEADER-SPENDENLINK: Direkt zum Formular scrollen & anzeigen ===
- headerSpendenLink.addEventListener("click", function (e) {
-  e.preventDefault();
-  zeigeFormularBtn.classList.add("hidden");
+  // === Formular anzeigen bei Klick auf einen der Buttons (Navigationsleiste oder in der Spenden-Section) ===
+  function formularAnzeigen() {
   spendenForm.classList.remove("hidden");
-  spendenForm.scrollIntoView({ behavior: "smooth" });
- });
+  zeigeFormularBtn.classList.add("hidden");
+  }
 
-  // === 2. DROPDOWN „Kleidung“: Freifeld für „Sonstiges“ anzeigen ===
-  kleidungDropdown.addEventListener("change", function () {
-    if (this.value === "Sonstiges") {
-      kleidungSonstiges.classList.remove("hidden");
-    } else {
-      kleidungSonstiges.classList.add("hidden");
-    }
-  });
+  zeigeFormularBtn.addEventListener("click", formularAnzeigen);
+  headerSpendenLink.addEventListener("click", formularAnzeigen);
 
-  // === 3. DROPDOWN „Spendenart“: Abholadresse ein-/ausblenden ===
-  spendenart.addEventListener("change", function () {
-    if (this.value === "abholung") {
-      abholadresse.classList.remove("hidden");
-    } else {
-      abholadresse.classList.add("hidden");
-    }
-  });
+  // === Weiterleitung zur Adresseingabe bei Wahl von "Abholung durch Sammelfahrzeug" ===
+  spendenart.addEventListener("change", () => {
+  if (spendenart.value === "abholung") {
+    abholadresse.classList.remove("hidden");
+  } else {
+    abholadresse.classList.add("hidden");
+  }
+});
 
-  // === 4. FORMULAR-VALIDIERUNG BEI ABSENDEN ===
+
+  // === Fehler bei fehlender Formulareingabe ===
   spendenForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault(); // Formularverhalten unterdrücken
 
-    // Alle Fehlermeldungen ausblenden
-    document.querySelectorAll("p[id^='fehler-']").forEach(p => p.classList.add("hidden"));
+  // Alle Fehlermeldungen verstecken
+  [
+    fehlerSpendenart,
+    fehlerStrasse,
+    fehlerPlz,
+    fehlerPlzBereich,
+    fehlerStadt,
+    fehlerKleidung,
+    fehlerKleidungSonstiges,
+    fehlerKrisengebiet
+  ].forEach(fehler => fehler.classList.add("hidden"));
 
-    // Eingabewerte erfassen
-    const art = spendenart.value;
-    const strasse = document.getElementById("adresse").value.trim();
-    const plz = document.getElementById("plz").value.trim();
-    const stadt = document.getElementById("stadt").value.trim();
-    const kleidungAuswahl = kleidungDropdown.value;
-    const kleidungFrei = kleidungSonstiges.value.trim();
-    const krise = document.getElementById("krisengebiet").value;
+  // Eingabewerte holen
+  const art = spendenart.value;
+  const str = adresse.value.trim();
+  const plzVal = plz.value.trim();
+  const stadtVal = stadt.value.trim();
+  const kleidungVal = kleidung.value;
+  const kleidungFrei = kleidungSonstiges.value.trim();
+  const krise = krisengebiet.value;
+  const plzRegex = /^[0-9]{5}$/;
 
-    let fehler = false;
 
-    // Spendenart prüfen
-    if (!art) {
-      document.getElementById("fehler-spendenart").classList.remove("hidden");
-      fehler = true;
+  let fehlerGefunden = false;
+
+  // Spendenart
+  if (!art) {
+    fehlerSpendenart.classList.remove("hidden");
+    fehlerGefunden = true;
+  }
+
+  // Abholadresse prüfen, wenn Abholung gewählt
+  if (art === "abholung") {
+    if (!str) {
+      fehlerStrasse.classList.remove("hidden");
+      fehlerGefunden = true;
+    }
+    if (!plzVal) {
+      fehlerPlz.classList.remove("hidden");
+      fehlerGefunden = true;
+    } else if (!plzRegex.test(plzVal)) {
+      fehlerPlzGueltigkeit.classList.remove("hidden"); // gleiche Meldung wie bei leer
+      fehlerGefunden = true;
+    } else if (!plzVal.startsWith("80")) {
+      fehlerPlzBereich.classList.remove("hidden");
+      fehlerGefunden = true;
     }
 
-    // Adressfelder bei Abholung prüfen
-    if (art === "abholung") {
-      if (!strasse) {
-        document.getElementById("fehler-strasse").classList.remove("hidden");
-        fehler = true;
-      }
-
-      if (!plz) {
-        document.getElementById("fehler-plz").classList.remove("hidden");
-        fehler = true;
-      } else if (!plz.startsWith("12")) {
-        document.getElementById("fehler-plz-bereich").classList.remove("hidden");
-        fehler = true;
-      }
-
-      if (!stadt) {
-        document.getElementById("fehler-abholadresse-fehlt").classList.remove("hidden");
-        fehler = true;
-      }
+    if (!stadtVal) {
+      fehlerStadt.classList.remove("hidden");
+      fehlerGefunden = true;
     }
+  }
 
-    // Kleidungsart prüfen
-    if (!kleidungAuswahl || (kleidungAuswahl === "Sonstiges" && !kleidungFrei)) {
-      document.getElementById("fehler-kleidung").classList.remove("hidden");
-      fehler = true;
-    }
+  // Kleidung prüfen
+  if (!kleidungVal || (kleidungVal === "Sonstiges" && kleidungFrei === "")) {
+    fehlerKleidung.classList.remove("hidden");
+    fehlerGefunden = true;
+  }
 
-    // Mindestlänge bei Freitext prüfen
-    if (kleidungAuswahl === "Sonstiges" && kleidungFrei.length > 0 && kleidungFrei.length < 3) {
-      document.getElementById("fehler-kleidung-sonstiges").classList.remove("hidden");
-      fehler = true;
-    }
+  if (kleidungVal === "Sonstiges" && kleidungFrei.length > 0 && kleidungFrei.length < 3) {
+    fehlerKleidungSonstiges.classList.remove("hidden");
+    fehlerGefunden = true;
+  }
 
-    // Krisengebiet prüfen
-    if (!krise) {
-      document.getElementById("fehler-krisengebiet").classList.remove("hidden");
-      fehler = true;
-    }
+  // Krisengebiet prüfen
+  if (!krise) {
+    fehlerKrisengebiet.classList.remove("hidden");
+    fehlerGefunden = true;
+  }
 
-    // Bei Fehler: abbrechen
-    if (fehler) return;
+  // Bei Fehler abbrechen
+  if (fehlerGefunden) return;
 
-    // Erfolgreich: Bestätigung anzeigen
-    let meldung = "";
-    if (art === "abholung") {
-      meldung += `<p><strong>Abholung</strong> an: ${strasse}, ${plz} ${stadt}</p>`;
-    } else {
-      meldung += `<p><strong>Übergabe</strong> an der Geschäftsstelle</p>`;
-    }
+  // Bestätigungsmeldung zusammenbauen
+  let meldung = "";
 
-    const kleidungGesamt = kleidungAuswahl === "Sonstiges" ? kleidungFrei : kleidungAuswahl;
-    meldung += `<p><strong>Kleidung:</strong> ${kleidungGesamt}</p>`;
-    meldung += `<p><strong>Krisengebiet:</strong> ${krise}</p>`;
-    meldung += `<p><strong>Datum:</strong> ${new Date().toLocaleDateString()}</p>`;
-    meldung += `<p><strong>Uhrzeit:</strong> ${new Date().toLocaleTimeString()}</p>`;
+  if (art === "abholung") {
+    meldung += `<p><strong>Abholung</strong> an: ${adresse.value.trim()}, ${plz.value.trim()} ${stadt.value.trim()}</p>`;
+  } else {
+    meldung += `<p><strong>Übergabe</strong> an der Geschäftsstelle</p>`;
+  }
 
-    spendenForm.classList.add("hidden");
-    bestaetigung.innerHTML = `<h3 class="font-bold mb-2">Vielen Dank für deine Spende!</h3>${meldung}`;
-    bestaetigung.classList.remove("hidden");
-  });
+  const kleidungFinal = (kleidung.value === "Sonstiges") ? kleidungSonstiges.value.trim() : kleidung.value;
+  meldung += `<p><strong>Kleidung:</strong> ${kleidungFinal}</p>`;
+  meldung += `<p><strong>Krisengebiet:</strong> ${krisengebiet.value}</p>`;
+  meldung += `<p><strong>Datum:</strong> ${new Date().toLocaleDateString("de-DE")}</p>`;
+  meldung += `<p><strong>Uhrzeit:</strong> ${new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}</p>`;
+
+  // Formular ausblenden, Bestätigung anzeigen
+  spendenForm.classList.add("hidden");
+  bestaetigung.innerHTML = `<h3 class="font-bold mb-2">Vielen Dank für deine Spende!</h3>${meldung}`;
+  bestaetigung.classList.remove("hidden");
+
+});
+
+  
+  
+
+
+ 
 
 </script>
 </body>
