@@ -26,7 +26,7 @@
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center py-4">
 
   <!-- Logo + Titel -->
-  <div class="flex items-center space-x-3 text-amber-600 py-2 px-2 sm:px-4 order-1 md:order-none">
+  <a href="#start" aria-label="Zur Startseite" class="flex items-center space-x-3 text-amber-600 py-2 px-2 sm:px-4 order-1 md:order-none">
      <div class="relative w-8 h-6">
          <!-- SVG 1 -->
           <svg class="absolute left-0 top-0 w-6 h-6 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -42,7 +42,7 @@
           </svg>
      </div>
       <span class="text-xl font-bold tracking-wide">Dress The World</span>
-    </div>
+    </a>
 
     <!-- Suche -->
     <div class="w-72 sm:w-64 lg:w-96 py-2 px-2 sm:px-4 order-3 md:order-none">
@@ -56,11 +56,17 @@
       </a>
     </div>
 
+    <!-- Menü Toggle Button (nur sichtbar auf mobilen Geräten) -->
+    <button id="menu-toggle" class="md:hidden p-2 text-amber-600 hover:text-amber-900 order-4">
+      ☰ Menü
+    </button>
+
     <!-- Menü -->
-    <nav class="flex gap-4 md:gap-6 order-4 md:order-none my-2 md:my-0">
-      <a class="text-amber-600 hover:text-amber-900" href="#start">Start</a>
-      <a class="text-amber-600 hover:text-amber-900" href="#ueber-uns">About</a>
-      <a class="text-amber-600 hover:text-amber-900" href="#so-gehts">Ablauf</a>
+    <nav class="flex hidden flex-col items-center gap-y-2 my-2 md:flex md:flex-row md:gap-6 order-4 md:order-none md:my-0">
+      <button id="menu-close" class="flex px-4 py-2 text-amber-600 md:hidden">✕</button>
+      <a class="text-center text-white bg-amber-500 rounded-full hover:bg-amber-600 px-4 py-2 md:text-amber-600 md:hover:text-amber-900 md:bg-transparent md:p-0 md:hover:bg-transparent" href="#start">Start</a>
+      <a class="text-center text-white bg-amber-500 rounded-full hover:bg-amber-600 px-4 py-2 md:text-amber-600 md:hover:text-amber-900 md:bg-transparent md:p-0 md:hover:bg-transparent" href="#ueber-uns">About</a>
+      <a class="text-center text-white bg-amber-500 rounded-full hover:bg-amber-600 px-4 py-2 md:text-amber-600 md:hover:text-amber-900 md:bg-transparent md:p-0 md:hover:bg-transparent" href="#so-gehts">Ablauf</a>
     </nav>
 
   </div>
@@ -74,7 +80,7 @@
       
         <!-- TEXTBEREICH -->
         <div class="text-center lg:text-left max-w-2xl">
-          <h2 class="text-4xl font-extrabold text-amber-600 mb-6">Willkommen</h2>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-amber-600 mb-6">Willkommen</h1>
           <p class="mb-4">
             Nur 
             <a href="https://www.greenpeace.de/publikationen/20151123_greenpeace_modekonsum_flyer.pdf" 
@@ -102,7 +108,7 @@
   <!-- ÜBER UNS -->
   <section id="ueber-uns" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900">Über uns</h2>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">Über uns</h1>
       <p class="text-pretty mb-4">Dress The World e.V. widmet sich ganz der Kleiderspenden-Logistik. </p>
       <p class="text-pretty mb-4">2015 begann alles mit einem einzigen Container, doch inzwischen gehen in unserer Münchner Zentrale täglich mehrere hundert Kilo Kleidung ein und aus, die wir so gezielt und nachhaltig handhaben wie möglich.</p>  
     </div>
@@ -111,19 +117,19 @@
   <!-- SO GEHT'S -->
   <section id="so-gehts" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900">So funktioniert's</h2>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">So funktioniert's</h1>
       <p class="text-pretty mb-4">Seit Oktober 2024 bieten wir Euch, unseren großzügigen Spenderinnen und Spendern, eine neue Möglichkeit, Kleidung bequem und zielgerichtet zu spenden.</p>
-      <p class="text-pretty mb-4">Zusätzlich zur Registrierung der Art der Kleidungsstücke könnt Ihr nun auch das <span class="font-bold text-amber-600">Krisengebiet aussuchen</span>, in die Eure Spende gehen soll.</p>  
+      <p class="text-pretty mb-4">Zusätzlich zur Registrierung der Art der Kleidungsstücke könnt Ihr nun auch das <span class="font-bold text-amber-600">Krisengebiet aussuchen</span>, in das Eure Spende gehen soll.</p>  
       <p class="text-pretty mb-4">Außerdem steht Euch nun im <span class="font-bold text-amber-600">Großraum München eine Abholoption</span> zur Verfügung.</p>
-      <p class="text-pretty mb-4">Auch die Übergabe funktioniert inzwischen kontaktlos und rund um die Uhr! Dafür steht Euch an unserer Kleiderbox ein Tablet zur Verfügung. <span class="font-bold text-amber-600">Wichtig:</span> Auch für diese Option ist eine Vorab-Registrierung online notwendig!</p>
-      <p class="text-pretty mb-4">Zu unseren <span class="font-bold text-amber-600">Öffnungszeiten werktags von 09:00 - 15:00 Uhr</span> ist weiterhin eine persönliche Übergabe ohne Vorab-Registrierung möglich. Wir bitten Euch jedoch, die Registrierung trotzdem vorzunehmen, da sie uns viel Arbeit erspart.</p>
+      <p class="text-pretty mb-4">Auch die Übergabe funktioniert inzwischen kontaktlos und rund um die Uhr! Dafür steht Euch an unserer Kleiderbox ein Tablet zur Verfügung.</p>
+      <p class="text-pretty mb-4">Zu unseren <span class="font-bold text-amber-600">Öffnungszeiten werktags von 09:00 - 15:00 Uhr</span> ist weiterhin eine persönliche Übergabe ohne eigene Registrierung möglich, sollte technisch doch einmal etwas nicht klappen. Insbesondere bei technischen Probleme mit dem Tablet vor Ort bitten wir um eine kurze Meldung per Telefon, Mail oder Social Media.</p>
     </div>
   </section>
 
   <!-- SPENDEN -->
   <section id="spenden" class="py-16 bg-gradient-to-r from-amber-100 via-white to-amber-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900">Spenden</h2>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">Spenden</h1>
       <p class="mb-6 text-pretty">Hilf uns, Kleidung dorthin zu bringen, wo sie am dringendsten gebraucht wird.</p>
       <!--Button zum Formular - keine Anzeige des Formulars während des Scrollens!-->
       <button id="zeigeFormularBtn" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition duration-300 mb-4">Jetzt spenden</button>
@@ -197,7 +203,7 @@
   <!-- SAG’S WEITER -->
   <section id="weiterempfehlen" class="py-16 bg-gradient-to-r from-gray-100 via-white to-gray-100">
     <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-4">Sag's weiter</h2>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">Sag's weiter</h1>
       <p class="text-pretty mb-4">Teile unser Konzept mit Freunden und Familie!</p>
       <div class="flex justify-center space-x-10 sm:space-x-20 mt-6">
         <!-- Social Media Icons von Heroicons, Styleelemente entfernt und durch eigene Klasse ersetzt-->
@@ -278,16 +284,26 @@
   // === Button zum Anzeigen des Formulars ===
   const zeigeFormularBtn = document.getElementById("zeigeFormularBtn");
   const headerSpendenLink = document.getElementById("spendenHeader");
+  // === Elemente für Menü-Toggle (nur auf mobilen Geräten) ===
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.querySelector("nav");
+  const menuClose = document.getElementById("menu-close");
   
   // === EVENTLISTENER ===
-  // === Präzisierung der "Sonstiges"-Eingabe ===
-  kleidung.addEventListener("change", () => {
-  if (kleidung.value === "Sonstiges") {
-    kleidungSonstiges.classList.remove("hidden");
-  } else {
-    kleidungSonstiges.classList.add("hidden");
-  }
-});
+  // === Menü-Toggle für mobile Ansicht ===
+  // === Öffnen
+  menuToggle.addEventListener("click", () => {
+  navMenu.classList.remove("hidden");
+  menuToggle.classList.add("hidden");
+  });
+  // === Schließen
+  menuClose.addEventListener("click", () => {
+  navMenu.classList.add("hidden");
+  menuToggle.classList.remove("hidden");
+  });
+
+  // === Formular-Eventlistener ===
+ 
 
   // === Formular anzeigen bei Klick auf einen der Buttons (Navigationsleiste oder in der Spenden-Section) ===
   function formularAnzeigen() {
@@ -307,6 +323,14 @@
   }
 });
 
+  // === Präzisierung der "Sonstiges"-Eingabe ===
+  kleidung.addEventListener("change", () => {
+  if (kleidung.value === "Sonstiges") {
+    kleidungSonstiges.classList.remove("hidden");
+  } else {
+    kleidungSonstiges.classList.add("hidden");
+  }
+});
 
   // === Fehler bei fehlender Formulareingabe ===
   spendenForm.addEventListener("submit", function (e) {
@@ -390,7 +414,7 @@
   let meldung = "";
 
   if (art === "abholung") {
-    meldung += `<p><strong>Abholung</strong> an: ${adresse.value.trim()}, ${plz.value.trim()} ${stadt.value.trim()}</p>`;
+    meldung += `<p><strong>Abholung</strong> von: ${adresse.value.trim()}, ${plz.value.trim()} ${stadt.value.trim()}</p>`;
   } else {
     meldung += `<p><strong>Übergabe</strong> an der Geschäftsstelle</p>`;
   }
